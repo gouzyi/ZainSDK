@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7407700822749B75009456AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407700722749B75009456AA /* AppDelegate.m */; };
+		7407700B22749B75009456AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407700A22749B75009456AA /* ViewController.m */; };
+		7407700E22749B75009456AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7407700C22749B75009456AA /* Main.storyboard */; };
+		7407701022749B76009456AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7407700F22749B76009456AA /* Assets.xcassets */; };
+		7407701322749B76009456AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7407701122749B76009456AA /* LaunchScreen.storyboard */; };
+		7407701622749B76009456AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407701522749B76009456AA /* main.m */; };
+		7407708022749DB6009456AA /* YXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407705922749DB6009456AA /* YXNetworkManager.m */; };
+		7407708122749DB6009456AA /* YXNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407705D22749DB6009456AA /* YXNavigationBar.m */; };
+		7407708222749DB6009456AA /* UIView+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407706222749DB6009456AA /* UIView+YXAddition.m */; };
+		7407708322749DB6009456AA /* UIColor+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407706322749DB6009456AA /* UIColor+YXAddition.m */; };
+		7407708422749DB6009456AA /* UILabel+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407706422749DB6009456AA /* UILabel+YXAddition.m */; };
+		7407708522749DB6009456AA /* NSDate+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407706622749DB6009456AA /* NSDate+YXAddition.m */; };
+		7407708622749DB6009456AA /* UIView+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407706A22749DB6009456AA /* UIView+Badge.m */; };
+		7407708722749DB6009456AA /* UICollectionView+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407706C22749DB6009456AA /* UICollectionView+YXAddition.m */; };
+		7407708822749DB6009456AA /* UILabel+YXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407706D22749DB6009456AA /* UILabel+YXAction.m */; };
+		7407708922749DB6009456AA /* UIButton+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707222749DB6009456AA /* UIButton+YXAddition.m */; };
+		7407708A22749DB6009456AA /* UIApplication+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707322749DB6009456AA /* UIApplication+YXAddition.m */; };
+		7407708B22749DB6009456AA /* NSMutableAttributedString+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707422749DB6009456AA /* NSMutableAttributedString+YXAddition.m */; };
+		7407708C22749DB6009456AA /* UIImage+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707722749DB6009456AA /* UIImage+YXAddition.m */; };
+		7407708D22749DB6009456AA /* UIViewController+navigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707A22749DB6009456AA /* UIViewController+navigationBar.m */; };
+		7407708E22749DB6009456AA /* UITableView+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707B22749DB6009456AA /* UITableView+YXAddition.m */; };
+		7407708F22749DB6009456AA /* NSString+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707C22749DB6009456AA /* NSString+YXAddition.m */; };
+		7407709022749DB6009456AA /* UITextField+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707D22749DB6009456AA /* UITextField+YXAddition.m */; };
+		7407709122749DB6009456AA /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707F22749DB6009456AA /* UIView+Toast.m */; };
+		7407709422749E22009456AA /* MBProgressHUD+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407709322749E22009456AA /* MBProgressHUD+YXAddition.m */; };
+		E7050730375F989A15E4AF72 /* Pods_ZainSDKExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32756AF3F3E7F6611DB47DC /* Pods_ZainSDKExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7407700322749B75009456AA /* ZainSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZainSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7407700622749B75009456AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7407700722749B75009456AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7407700922749B75009456AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7407700A22749B75009456AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7407700D22749B75009456AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7407700F22749B76009456AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7407701222749B76009456AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7407701422749B76009456AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7407701522749B76009456AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7407705922749DB6009456AA /* YXNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNetworkManager.m; sourceTree = "<group>"; };
+		7407705A22749DB6009456AA /* YXNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNetworkManager.h; sourceTree = "<group>"; };
+		7407705B22749DB6009456AA /* ZainSDKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZainSDKMacro.h; sourceTree = "<group>"; };
+		7407705D22749DB6009456AA /* YXNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNavigationBar.m; sourceTree = "<group>"; };
+		7407705E22749DB6009456AA /* YXNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNavigationBar.h; sourceTree = "<group>"; };
+		7407706022749DB6009456AA /* UIApplication+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+YXAddition.h"; sourceTree = "<group>"; };
+		7407706122749DB6009456AA /* UIButton+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+YXAddition.h"; sourceTree = "<group>"; };
+		7407706222749DB6009456AA /* UIView+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YXAddition.m"; sourceTree = "<group>"; };
+		7407706322749DB6009456AA /* UIColor+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YXAddition.m"; sourceTree = "<group>"; };
+		7407706422749DB6009456AA /* UILabel+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YXAddition.m"; sourceTree = "<group>"; };
+		7407706522749DB6009456AA /* NSMutableAttributedString+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+YXAddition.h"; sourceTree = "<group>"; };
+		7407706622749DB6009456AA /* NSDate+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YXAddition.m"; sourceTree = "<group>"; };
+		7407706722749DB6009456AA /* NSString+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YXAddition.h"; sourceTree = "<group>"; };
+		7407706822749DB6009456AA /* UITableView+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YXAddition.h"; sourceTree = "<group>"; };
+		7407706922749DB6009456AA /* UIViewController+navigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+navigationBar.h"; sourceTree = "<group>"; };
+		7407706A22749DB6009456AA /* UIView+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Badge.m"; sourceTree = "<group>"; };
+		7407706B22749DB6009456AA /* UIImage+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YXAddition.h"; sourceTree = "<group>"; };
+		7407706C22749DB6009456AA /* UICollectionView+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YXAddition.m"; sourceTree = "<group>"; };
+		7407706D22749DB6009456AA /* UILabel+YXAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YXAction.m"; sourceTree = "<group>"; };
+		7407706E22749DB6009456AA /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		7407706F22749DB6009456AA /* UITextField+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+YXAddition.h"; sourceTree = "<group>"; };
+		7407707022749DB6009456AA /* UIColor+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YXAddition.h"; sourceTree = "<group>"; };
+		7407707122749DB6009456AA /* UIView+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YXAddition.h"; sourceTree = "<group>"; };
+		7407707222749DB6009456AA /* UIButton+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YXAddition.m"; sourceTree = "<group>"; };
+		7407707322749DB6009456AA /* UIApplication+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+YXAddition.m"; sourceTree = "<group>"; };
+		7407707422749DB6009456AA /* NSMutableAttributedString+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+YXAddition.m"; sourceTree = "<group>"; };
+		7407707522749DB6009456AA /* NSDate+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YXAddition.h"; sourceTree = "<group>"; };
+		7407707622749DB6009456AA /* UILabel+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YXAddition.h"; sourceTree = "<group>"; };
+		7407707722749DB6009456AA /* UIImage+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YXAddition.m"; sourceTree = "<group>"; };
+		7407707822749DB6009456AA /* UICollectionView+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YXAddition.h"; sourceTree = "<group>"; };
+		7407707922749DB6009456AA /* UIView+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Badge.h"; sourceTree = "<group>"; };
+		7407707A22749DB6009456AA /* UIViewController+navigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+navigationBar.m"; sourceTree = "<group>"; };
+		7407707B22749DB6009456AA /* UITableView+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YXAddition.m"; sourceTree = "<group>"; };
+		7407707C22749DB6009456AA /* NSString+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YXAddition.m"; sourceTree = "<group>"; };
+		7407707D22749DB6009456AA /* UITextField+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+YXAddition.m"; sourceTree = "<group>"; };
+		7407707E22749DB6009456AA /* UILabel+YXAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YXAction.h"; sourceTree = "<group>"; };
+		7407707F22749DB6009456AA /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		7407709222749E22009456AA /* MBProgressHUD+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+YXAddition.h"; sourceTree = "<group>"; };
+		7407709322749E22009456AA /* MBProgressHUD+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+YXAddition.m"; sourceTree = "<group>"; };
+		A32756AF3F3E7F6611DB47DC /* Pods_ZainSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZainSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FA9F6F4833462EA86CCDF3 /* Pods-ZainSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZainSDKExample.release.xcconfig"; path = "Target Support Files/Pods-ZainSDKExample/Pods-ZainSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		F07BF6A41A62DACD0679603A /* Pods-ZainSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZainSDKExample.debug.xcconfig"; path = "Target Support Files/Pods-ZainSDKExample/Pods-ZainSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7407700022749B75009456AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7050730375F989A15E4AF72 /* Pods_ZainSDKExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		293AB85845CC9D275FC0F855 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A32756AF3F3E7F6611DB47DC /* Pods_ZainSDKExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74076FFA22749B75009456AA = {
+			isa = PBXGroup;
+			children = (
+				7407700522749B75009456AA /* ZainSDKExample */,
+				7407700422749B75009456AA /* Products */,
+				D3D74E1EF21642C0D319C036 /* Pods */,
+				293AB85845CC9D275FC0F855 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7407700422749B75009456AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7407700322749B75009456AA /* ZainSDKExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7407700522749B75009456AA /* ZainSDKExample */ = {
+			isa = PBXGroup;
+			children = (
+				7407705722749DB6009456AA /* ZainSDK */,
+				7407700622749B75009456AA /* AppDelegate.h */,
+				7407700722749B75009456AA /* AppDelegate.m */,
+				7407700922749B75009456AA /* ViewController.h */,
+				7407700A22749B75009456AA /* ViewController.m */,
+				7407700C22749B75009456AA /* Main.storyboard */,
+				7407700F22749B76009456AA /* Assets.xcassets */,
+				7407701122749B76009456AA /* LaunchScreen.storyboard */,
+				7407701422749B76009456AA /* Info.plist */,
+				7407701522749B76009456AA /* main.m */,
+			);
+			path = ZainSDKExample;
+			sourceTree = "<group>";
+		};
+		7407705722749DB6009456AA /* ZainSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7407705822749DB6009456AA /* NetworkManager */,
+				7407705B22749DB6009456AA /* ZainSDKMacro.h */,
+				7407705C22749DB6009456AA /* NavigationBar */,
+				7407705F22749DB6009456AA /* ZainExtensions */,
+			);
+			name = ZainSDK;
+			path = ../../ZainSDK;
+			sourceTree = "<group>";
+		};
+		7407705822749DB6009456AA /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				7407705922749DB6009456AA /* YXNetworkManager.m */,
+				7407705A22749DB6009456AA /* YXNetworkManager.h */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		7407705C22749DB6009456AA /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				7407705D22749DB6009456AA /* YXNavigationBar.m */,
+				7407705E22749DB6009456AA /* YXNavigationBar.h */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		7407705F22749DB6009456AA /* ZainExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				7407709222749E22009456AA /* MBProgressHUD+YXAddition.h */,
+				7407709322749E22009456AA /* MBProgressHUD+YXAddition.m */,
+				7407707522749DB6009456AA /* NSDate+YXAddition.h */,
+				7407706622749DB6009456AA /* NSDate+YXAddition.m */,
+				7407706522749DB6009456AA /* NSMutableAttributedString+YXAddition.h */,
+				7407707422749DB6009456AA /* NSMutableAttributedString+YXAddition.m */,
+				7407706722749DB6009456AA /* NSString+YXAddition.h */,
+				7407707C22749DB6009456AA /* NSString+YXAddition.m */,
+				7407706022749DB6009456AA /* UIApplication+YXAddition.h */,
+				7407707322749DB6009456AA /* UIApplication+YXAddition.m */,
+				7407706122749DB6009456AA /* UIButton+YXAddition.h */,
+				7407707222749DB6009456AA /* UIButton+YXAddition.m */,
+				7407707822749DB6009456AA /* UICollectionView+YXAddition.h */,
+				7407706C22749DB6009456AA /* UICollectionView+YXAddition.m */,
+				7407707022749DB6009456AA /* UIColor+YXAddition.h */,
+				7407706322749DB6009456AA /* UIColor+YXAddition.m */,
+				7407706B22749DB6009456AA /* UIImage+YXAddition.h */,
+				7407707722749DB6009456AA /* UIImage+YXAddition.m */,
+				7407707E22749DB6009456AA /* UILabel+YXAction.h */,
+				7407706D22749DB6009456AA /* UILabel+YXAction.m */,
+				7407707622749DB6009456AA /* UILabel+YXAddition.h */,
+				7407706422749DB6009456AA /* UILabel+YXAddition.m */,
+				7407706822749DB6009456AA /* UITableView+YXAddition.h */,
+				7407707B22749DB6009456AA /* UITableView+YXAddition.m */,
+				7407706F22749DB6009456AA /* UITextField+YXAddition.h */,
+				7407707D22749DB6009456AA /* UITextField+YXAddition.m */,
+				7407707922749DB6009456AA /* UIView+Badge.h */,
+				7407706A22749DB6009456AA /* UIView+Badge.m */,
+				7407706E22749DB6009456AA /* UIView+Toast.h */,
+				7407707F22749DB6009456AA /* UIView+Toast.m */,
+				7407707122749DB6009456AA /* UIView+YXAddition.h */,
+				7407706222749DB6009456AA /* UIView+YXAddition.m */,
+				7407706922749DB6009456AA /* UIViewController+navigationBar.h */,
+				7407707A22749DB6009456AA /* UIViewController+navigationBar.m */,
+			);
+			path = ZainExtensions;
+			sourceTree = "<group>";
+		};
+		D3D74E1EF21642C0D319C036 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F07BF6A41A62DACD0679603A /* Pods-ZainSDKExample.debug.xcconfig */,
+				B2FA9F6F4833462EA86CCDF3 /* Pods-ZainSDKExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7407700222749B75009456AA /* ZainSDKExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7407701922749B76009456AA /* Build configuration list for PBXNativeTarget "ZainSDKExample" */;
+			buildPhases = (
+				1FD2B926BBDDE9882064F2B6 /* [CP] Check Pods Manifest.lock */,
+				74076FFF22749B75009456AA /* Sources */,
+				7407700022749B75009456AA /* Frameworks */,
+				7407700122749B75009456AA /* Resources */,
+				B68FA744DEF1AC25CA524568 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZainSDKExample;
+			productName = ZainSDKExample;
+			productReference = 7407700322749B75009456AA /* ZainSDKExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74076FFB22749B75009456AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = zainguo;
+				TargetAttributes = {
+					7407700222749B75009456AA = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 74076FFE22749B75009456AA /* Build configuration list for PBXProject "ZainSDKExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74076FFA22749B75009456AA;
+			productRefGroup = 7407700422749B75009456AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7407700222749B75009456AA /* ZainSDKExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7407700122749B75009456AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7407701322749B76009456AA /* LaunchScreen.storyboard in Resources */,
+				7407701022749B76009456AA /* Assets.xcassets in Resources */,
+				7407700E22749B75009456AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FD2B926BBDDE9882064F2B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZainSDKExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B68FA744DEF1AC25CA524568 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZainSDKExample/Pods-ZainSDKExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZainSDKExample/Pods-ZainSDKExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74076FFF22749B75009456AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7407708722749DB6009456AA /* UICollectionView+YXAddition.m in Sources */,
+				7407700B22749B75009456AA /* ViewController.m in Sources */,
+				7407701622749B76009456AA /* main.m in Sources */,
+				7407708322749DB6009456AA /* UIColor+YXAddition.m in Sources */,
+				7407700822749B75009456AA /* AppDelegate.m in Sources */,
+				7407708222749DB6009456AA /* UIView+YXAddition.m in Sources */,
+				7407709022749DB6009456AA /* UITextField+YXAddition.m in Sources */,
+				7407708422749DB6009456AA /* UILabel+YXAddition.m in Sources */,
+				7407709422749E22009456AA /* MBProgressHUD+YXAddition.m in Sources */,
+				7407708F22749DB6009456AA /* NSString+YXAddition.m in Sources */,
+				7407708022749DB6009456AA /* YXNetworkManager.m in Sources */,
+				7407708C22749DB6009456AA /* UIImage+YXAddition.m in Sources */,
+				7407708122749DB6009456AA /* YXNavigationBar.m in Sources */,
+				7407708D22749DB6009456AA /* UIViewController+navigationBar.m in Sources */,
+				7407708B22749DB6009456AA /* NSMutableAttributedString+YXAddition.m in Sources */,
+				7407708A22749DB6009456AA /* UIApplication+YXAddition.m in Sources */,
+				7407708822749DB6009456AA /* UILabel+YXAction.m in Sources */,
+				7407708922749DB6009456AA /* UIButton+YXAddition.m in Sources */,
+				7407708622749DB6009456AA /* UIView+Badge.m in Sources */,
+				7407709122749DB6009456AA /* UIView+Toast.m in Sources */,
+				7407708E22749DB6009456AA /* UITableView+YXAddition.m in Sources */,
+				7407708522749DB6009456AA /* NSDate+YXAddition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7407700C22749B75009456AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7407700D22749B75009456AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7407701122749B76009456AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7407701222749B76009456AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7407701722749B76009456AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7407701822749B76009456AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7407701A22749B76009456AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F07BF6A41A62DACD0679603A /* Pods-ZainSDKExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D39S8YPM7;
+				INFOPLIST_FILE = ZainSDKExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.caixin.ZainSDKExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7407701B22749B76009456AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2FA9F6F4833462EA86CCDF3 /* Pods-ZainSDKExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D39S8YPM7;
+				INFOPLIST_FILE = ZainSDKExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.caixin.ZainSDKExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74076FFE22749B75009456AA /* Build configuration list for PBXProject "ZainSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7407701722749B76009456AA /* Debug */,
+				7407701822749B76009456AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7407701922749B76009456AA /* Build configuration list for PBXNativeTarget "ZainSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7407701A22749B76009456AA /* Debug */,
+				7407701B22749B76009456AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74076FFB22749B75009456AA /* Project object */;
+}
