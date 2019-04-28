@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   # 项目名
   spec.name         = "ZainSDK"
   # 版本号
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   # 简单描述
   spec.summary      = "ZainSDK是iOS日常开发常用的工具类"
   # 详细描述
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/gouzyi/ZainSDK.git", :tag => spec.version }
   # spec.source_files  = "ZainSDK/**/*.{h,m}"
   # 源文件（可以包含.h和.m）
-  spec.source_files  = 'ZainSDK/ZainSDKMacro.h'
+  spec.source_files  = 'ZainSDK/*.{h}'
   # 头文件(.h文件)
   spec.public_header_files = 'ZainSDK/ZainSDKMacro.h'
   # 是否支持ARC
@@ -47,7 +47,7 @@ Pod::Spec.new do |spec|
 
     nav.source_files = 'ZainSDK/NavigationBar/*.{h,m}'
     nav.dependency 'ZainSDK/ZainExtensions'
-    nav.dependency 'ZainSDK/ZainInline.h'
+    nav.public_header_files = 'ZainSDK/ZainInline/**/*'
 
   end
   spec.subspec 'NetworkManager' do |net|

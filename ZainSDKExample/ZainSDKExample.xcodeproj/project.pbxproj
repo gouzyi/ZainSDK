@@ -148,8 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				7407705B22749DB6009456AA /* ZainSDKMacro.h */,
-				74504A2922759EAF00368E28 /* ZainMacro.h */,
-				74504A2A2275A00000368E28 /* ZainInline.h */,
+				74504A2B2275B39900368E28 /* ZainHeader */,
 				7407705822749DB6009456AA /* NetworkManager */,
 				7407705C22749DB6009456AA /* NavigationBar */,
 				7407705F22749DB6009456AA /* ZainExtensions */,
@@ -213,6 +212,15 @@
 				7407706222749DB6009456AA /* UIView+YXAddition.m */,
 			);
 			path = ZainExtensions;
+			sourceTree = "<group>";
+		};
+		74504A2B2275B39900368E28 /* ZainHeader */ = {
+			isa = PBXGroup;
+			children = (
+				74504A2922759EAF00368E28 /* ZainMacro.h */,
+				74504A2A2275A00000368E28 /* ZainInline.h */,
+			);
+			path = ZainHeader;
 			sourceTree = "<group>";
 		};
 		D3D74E1EF21642C0D319C036 /* Pods */ = {

@@ -20,9 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     BOOL phone = isIPhoneX();
+    KLOG(@"------------>%hhd",phone);
     [MBProgressHUD yx_showMessage:@"my is a hud"];
-    
-    
     
 }
 

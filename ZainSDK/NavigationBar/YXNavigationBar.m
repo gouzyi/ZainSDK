@@ -18,7 +18,6 @@
 #define kSTATUSBAR_HEIGHT       (isIPhoneX() ? 44 : 20)
 
 
-
 static const CGFloat BarItemHeight = 40;
 static const CGFloat BarItemWidth = 45;
 
