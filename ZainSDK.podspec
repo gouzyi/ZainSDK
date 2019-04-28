@@ -38,7 +38,6 @@ Pod::Spec.new do |spec|
   spec.subspec 'NavigationBar' do |nav|
 
     nav.source_files = 'ZainSDK/NavigationBar/*.{h,m}'
-    nav.public_header_files = 'ZainSDK/ZainSDKMacro.h'
     nav.dependency 'ZainSDK/ZainExtensions'
 
   end
