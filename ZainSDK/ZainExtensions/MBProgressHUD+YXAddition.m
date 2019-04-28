@@ -81,9 +81,6 @@ static MBProgressHUD *_hud;
     //设置等待框背景色为黑色
     _hud.bezelView.backgroundColor = [UIColor blackColor];
     _hud.detailsLabel.textColor = [UIColor whiteColor];
-    
-    
-    
 }
 
 /// 加载文字提示 显示时间为2妙

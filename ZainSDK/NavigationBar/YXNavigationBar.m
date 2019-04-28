@@ -14,7 +14,6 @@
 #define kSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
 #define kSCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
 
-
 #define kNAVIBAR_HEIGHT         (isIPhoneX() ? 88 : 64)
 #define kSTATUSBAR_HEIGHT       (isIPhoneX() ? 44 : 20)
 

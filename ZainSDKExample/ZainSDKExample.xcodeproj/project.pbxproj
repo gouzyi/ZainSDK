@@ -26,7 +26,6 @@
 		7407708A22749DB6009456AA /* UIApplication+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707322749DB6009456AA /* UIApplication+YXAddition.m */; };
 		7407708B22749DB6009456AA /* NSMutableAttributedString+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707422749DB6009456AA /* NSMutableAttributedString+YXAddition.m */; };
 		7407708C22749DB6009456AA /* UIImage+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707722749DB6009456AA /* UIImage+YXAddition.m */; };
-		7407708D22749DB6009456AA /* UIViewController+navigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707A22749DB6009456AA /* UIViewController+navigationBar.m */; };
 		7407708E22749DB6009456AA /* UITableView+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707B22749DB6009456AA /* UITableView+YXAddition.m */; };
 		7407708F22749DB6009456AA /* NSString+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707C22749DB6009456AA /* NSString+YXAddition.m */; };
 		7407709022749DB6009456AA /* UITextField+YXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7407707D22749DB6009456AA /* UITextField+YXAddition.m */; };
@@ -60,7 +59,6 @@
 		7407706622749DB6009456AA /* NSDate+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YXAddition.m"; sourceTree = "<group>"; };
 		7407706722749DB6009456AA /* NSString+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YXAddition.h"; sourceTree = "<group>"; };
 		7407706822749DB6009456AA /* UITableView+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YXAddition.h"; sourceTree = "<group>"; };
-		7407706922749DB6009456AA /* UIViewController+navigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+navigationBar.h"; sourceTree = "<group>"; };
 		7407706A22749DB6009456AA /* UIView+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Badge.m"; sourceTree = "<group>"; };
 		7407706B22749DB6009456AA /* UIImage+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YXAddition.h"; sourceTree = "<group>"; };
 		7407706C22749DB6009456AA /* UICollectionView+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YXAddition.m"; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 		7407707722749DB6009456AA /* UIImage+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YXAddition.m"; sourceTree = "<group>"; };
 		7407707822749DB6009456AA /* UICollectionView+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YXAddition.h"; sourceTree = "<group>"; };
 		7407707922749DB6009456AA /* UIView+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Badge.h"; sourceTree = "<group>"; };
-		7407707A22749DB6009456AA /* UIViewController+navigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+navigationBar.m"; sourceTree = "<group>"; };
 		7407707B22749DB6009456AA /* UITableView+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YXAddition.m"; sourceTree = "<group>"; };
 		7407707C22749DB6009456AA /* NSString+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YXAddition.m"; sourceTree = "<group>"; };
 		7407707D22749DB6009456AA /* UITextField+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+YXAddition.m"; sourceTree = "<group>"; };
@@ -148,8 +145,8 @@
 		7407705722749DB6009456AA /* ZainSDK */ = {
 			isa = PBXGroup;
 			children = (
-				7407705822749DB6009456AA /* NetworkManager */,
 				7407705B22749DB6009456AA /* ZainSDKMacro.h */,
+				7407705822749DB6009456AA /* NetworkManager */,
 				7407705C22749DB6009456AA /* NavigationBar */,
 				7407705F22749DB6009456AA /* ZainExtensions */,
 			);
@@ -160,8 +157,8 @@
 		7407705822749DB6009456AA /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				7407705922749DB6009456AA /* YXNetworkManager.m */,
 				7407705A22749DB6009456AA /* YXNetworkManager.h */,
+				7407705922749DB6009456AA /* YXNetworkManager.m */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -169,8 +166,8 @@
 		7407705C22749DB6009456AA /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				7407705D22749DB6009456AA /* YXNavigationBar.m */,
 				7407705E22749DB6009456AA /* YXNavigationBar.h */,
+				7407705D22749DB6009456AA /* YXNavigationBar.m */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -210,8 +207,6 @@
 				7407707F22749DB6009456AA /* UIView+Toast.m */,
 				7407707122749DB6009456AA /* UIView+YXAddition.h */,
 				7407706222749DB6009456AA /* UIView+YXAddition.m */,
-				7407706922749DB6009456AA /* UIViewController+navigationBar.h */,
-				7407707A22749DB6009456AA /* UIViewController+navigationBar.m */,
 			);
 			path = ZainExtensions;
 			sourceTree = "<group>";
@@ -359,7 +354,6 @@
 				7407708022749DB6009456AA /* YXNetworkManager.m in Sources */,
 				7407708C22749DB6009456AA /* UIImage+YXAddition.m in Sources */,
 				7407708122749DB6009456AA /* YXNavigationBar.m in Sources */,
-				7407708D22749DB6009456AA /* UIViewController+navigationBar.m in Sources */,
 				7407708B22749DB6009456AA /* NSMutableAttributedString+YXAddition.m in Sources */,
 				7407708A22749DB6009456AA /* UIApplication+YXAddition.m in Sources */,
 				7407708822749DB6009456AA /* UILabel+YXAction.m in Sources */,
