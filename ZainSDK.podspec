@@ -31,7 +31,6 @@ Pod::Spec.new do |spec|
   spec.subspec 'ZainExtensions' do |e|
     e.source_files = 'ZainSDK/ZainExtensions/**/*'
     e.dependency 'MBProgressHUD'
-    e.dependency 'ZainSDK/NavigationBar'
     # 依赖的系统框架
     e.frameworks = 'UIKit'
   end

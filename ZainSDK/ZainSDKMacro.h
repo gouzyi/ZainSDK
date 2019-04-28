@@ -23,7 +23,6 @@
 #import "UIView+Badge.h"
 #import "UIView+Toast.h"
 #import "UIView+YXAddition.h"
-#import "UIViewController+navigationBar.h"
 #import "UIImage+YXAddition.h"
 #import "UITableView+YXAddition.h"
 #import "UICollectionView+YXAddition.h"
