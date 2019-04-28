@@ -65,7 +65,11 @@ static MBProgressHUD *_hud;
     if (!view) {
         view = [UIApplication sharedApplication].keyWindow;
     }
-    [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = [UIColor whiteColor];
+    if (@available(iOS 9.0, *)) {
+        [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = [UIColor whiteColor];
+    } else {
+        [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor whiteColor];
+    }
     // 快速显示一个提示信息
     _hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     _hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;

@@ -13,31 +13,37 @@ Pod::Spec.new do |spec|
   spec.summary      = "ZainSDK是iOS日常开发常用的工具类"
   spec.description  = "包含UIView、UILabe、UIButton、NSString、UIColor...常用Extenions"
   spec.homepage     = "https://github.com/gouzyi/ZainSDK"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author             = { "zainguo" => "572249347@qq.com" }
-  spec.platform     = :ios, "5.0"
-  spec.source       = { :git => "https://github.com/gouzyi/ZainSDK.git", :tag => spec.version }
 
-  spec.source_files  = "ZainSDK/**/*.{h,m}"
-  spec.public_header_files = "ZainSDK/ZainSDKMacro.h"
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.author       = { "zainguo" => "572249347@qq.com" }
+  spec.social_media_url = "https://www.jianshu.com/u/b2d703ff4984"
+
+
+  spec.source       = { :git => "https://github.com/gouzyi/ZainSDK.git", :tag => spec.version }
+  # spec.source_files  = "ZainSDK/**/*.{h,m}"
+  spec.source_files  = 'ZainSDK/ZainSDKMacro.h'
+
+  spec.public_header_files = 'ZainSDK/ZainSDKMacro.h'
 
   spec.requires_arc = true
+  spec.platform     = :ios, "8.0"
 
   spec.subspec 'ZainExtensions' do |e|
-    e.source_files = "ZainSDK/ZainExtensions/**/*"
-    e.dependency "MBProgressHUD"
+    e.source_files = 'ZainSDK/ZainExtensions/**/*'
+    e.dependency 'MBProgressHUD'
     # 依赖的系统框架
-    e.frameworks = "UIKit"
+    e.frameworks = 'UIKit'
   end
 
   spec.subspec 'NavigationBar' do |nav|
-    nav.source_files = "ZainSDK/NavigationBar/*.{h,m}"
-    nav.dependency "ZainSDK/ZainExtensions/**/*"
+
+    nav.source_files = 'ZainSDK/NavigationBar/*.{h,m}'
+    nav.dependency 'ZainSDK/ZainExtensions'
 
   end
   spec.subspec 'NetworkManager' do |net|
-    net.source_files = "ZainSDK/NetworkManager/*.{h,m}"
-    net.dependency "AFNetworking"
+    net.source_files = 'ZainSDK/NetworkManager/*.{h,m}'
+    net.dependency 'AFNetworking'
   end
 
 end
