@@ -82,6 +82,8 @@
 		7407707F22749DB6009456AA /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		7407709222749E22009456AA /* MBProgressHUD+YXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+YXAddition.h"; sourceTree = "<group>"; };
 		7407709322749E22009456AA /* MBProgressHUD+YXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+YXAddition.m"; sourceTree = "<group>"; };
+		74504A2922759EAF00368E28 /* ZainMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZainMacro.h; sourceTree = "<group>"; };
+		74504A2A2275A00000368E28 /* ZainInline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZainInline.h; sourceTree = "<group>"; };
 		A32756AF3F3E7F6611DB47DC /* Pods_ZainSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZainSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FA9F6F4833462EA86CCDF3 /* Pods-ZainSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZainSDKExample.release.xcconfig"; path = "Target Support Files/Pods-ZainSDKExample/Pods-ZainSDKExample.release.xcconfig"; sourceTree = "<group>"; };
 		F07BF6A41A62DACD0679603A /* Pods-ZainSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZainSDKExample.debug.xcconfig"; path = "Target Support Files/Pods-ZainSDKExample/Pods-ZainSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				7407705B22749DB6009456AA /* ZainSDKMacro.h */,
+				74504A2922759EAF00368E28 /* ZainMacro.h */,
+				74504A2A2275A00000368E28 /* ZainInline.h */,
 				7407705822749DB6009456AA /* NetworkManager */,
 				7407705C22749DB6009456AA /* NavigationBar */,
 				7407705F22749DB6009456AA /* ZainExtensions */,

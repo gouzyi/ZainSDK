@@ -8,24 +8,32 @@
 
 Pod::Spec.new do |spec|
 
+  # 项目名
   spec.name         = "ZainSDK"
+  # 版本号
   spec.version      = "0.0.1"
+  # 简单描述
   spec.summary      = "ZainSDK是iOS日常开发常用的工具类"
+  # 详细描述
   spec.description  = "包含UIView、UILabe、UIButton、NSString、UIColor...常用Extenions"
+  # 项目的主页
   spec.homepage     = "https://github.com/gouzyi/ZainSDK"
-
+  # 项目遵守的协议
   spec.license      = { :type => "MIT", :file => "LICENSE" }
+  # 作者的邮箱
   spec.author       = { "zainguo" => "572249347@qq.com" }
+  # 社交地址
   spec.social_media_url = "https://www.jianshu.com/u/b2d703ff4984"
-
-
+  # 源码git地址
   spec.source       = { :git => "https://github.com/gouzyi/ZainSDK.git", :tag => spec.version }
   # spec.source_files  = "ZainSDK/**/*.{h,m}"
+  # 源文件（可以包含.h和.m）
   spec.source_files  = 'ZainSDK/ZainSDKMacro.h'
-
+  # 头文件(.h文件)
   spec.public_header_files = 'ZainSDK/ZainSDKMacro.h'
-
+  # 是否支持ARC
   spec.requires_arc = true
+  # 支持的版本
   spec.platform     = :ios, "8.0"
 
   spec.subspec 'ZainExtensions' do |e|
@@ -39,6 +47,7 @@ Pod::Spec.new do |spec|
 
     nav.source_files = 'ZainSDK/NavigationBar/*.{h,m}'
     nav.dependency 'ZainSDK/ZainExtensions'
+    nav.dependency 'ZainSDK/ZainInline.h'
 
   end
   spec.subspec 'NetworkManager' do |net|

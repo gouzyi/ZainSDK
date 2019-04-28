@@ -9,29 +9,14 @@
 
 #import "YXNavigationBar.h"
 #import "UIView+YXAddition.h"
+#import "ZainInline.h"
 
 
 #define kSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
 #define kSCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
-
 #define kNAVIBAR_HEIGHT         (isIPhoneX() ? 88 : 64)
 #define kSTATUSBAR_HEIGHT       (isIPhoneX() ? 44 : 20)
 
-
-/**判读是否有刘海**/
-static inline BOOL isIPhoneX() {
-    BOOL iPhoneX = NO;
-    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
-        return iPhoneX;
-    }
-    if (@available(iOS 11.0, *)) {
-        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
-        if (mainWindow.safeAreaInsets.bottom > 0.0) {
-            iPhoneX = YES;
-        }
-    }
-    return iPhoneX;
-}
 
 
 static const CGFloat BarItemHeight = 40;

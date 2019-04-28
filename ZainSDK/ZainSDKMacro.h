@@ -10,6 +10,14 @@
 #define ZainSDKMacro_h
 
 
+#pragma mark -- Tools
+#import "YXNetworkManager.h"
+#import "YXNavigationBar.h"
+
+#pragma mark - Macro
+#import "ZainMacro.h"
+#import "ZainInline.h"
+
 
 #pragma mark -- Extrnsions
 
@@ -33,10 +41,8 @@
 
 #import "MBProgressHUD+YXAddition.h"
 
-#pragma mark -- Tools
 
-#import "YXNetworkManager.h"
-#import "YXNavigationBar.h"
+
 
 
 #endif /* ZainSDKMacro_h */
