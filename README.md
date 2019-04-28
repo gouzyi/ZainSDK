@@ -1,6 +1,6 @@
 ## ZainSDK
 iOS日常开发工具类
-<<<<<<< HEAD
+
 ## Requirements 要求
 * iOS 8+
 
@@ -16,9 +16,4 @@ iOS日常开发工具类
 
 
 
-=======
 
-
-# 安装
-pod 'ZainSDK'
->>>>>>> c3eb6ad52927682830469425ed9895dba81a9803
