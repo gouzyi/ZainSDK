@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/gouzyi/ZainSDK.git", :tag => spec.version }
   # spec.source_files  = "ZainSDK/**/*.{h,m}"
   # 源文件（可以包含.h和.m）
-  spec.source_files  = 'ZainSDK/*.{h}'
+  spec.source_files  = 'ZainSDK/ZainSDKMacro.h'
   # 头文件(.h文件)
   spec.public_header_files = 'ZainSDK/ZainSDKMacro.h'
   # 是否支持ARC
@@ -43,11 +43,16 @@ Pod::Spec.new do |spec|
     e.frameworks = 'UIKit'
   end
 
+  spec.subspec 'ZainHeader' do |h|
+    h.source_files = 'ZainSDK/ZainHeader/*.{h}'
+
+  end
+
   spec.subspec 'NavigationBar' do |nav|
 
     nav.source_files = 'ZainSDK/NavigationBar/*.{h,m}'
     nav.dependency 'ZainSDK/ZainExtensions'
-    nav.public_header_files = 'ZainSDK/ZainInline/**/*'
+    nav.dependency 'ZainSDK/ZainHeader'
 
   end
   spec.subspec 'NetworkManager' do |net|

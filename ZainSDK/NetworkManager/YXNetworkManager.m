@@ -17,58 +17,196 @@
 @implementation YXNetworkManager
 
 static AFHTTPSessionManager *_sessionManager;
+static NSMutableArray *_allSessionTask;
+static dispatch_semaphore_t _semaphore;
+static dispatch_time_t _overTime;
 
 
-
-+ (void)GET:(NSString *)URL
- parameters:(id)parameters
-    success:(YXHttpRequestSuccess)success
-    failure:(YXHttpRequestFailed)failure {
-
+#pragma mark - 取消请求
++ (void)cancelAllRequest {
     
-    [_sessionManager GET:URL parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+    dispatch_semaphore_wait(_semaphore, _overTime);
+    [[self allSessionTask] enumerateObjectsUsingBlock:^(NSURLSessionTask  *_Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+        [task cancel];
+    }];
+    [[self allSessionTask] removeAllObjects];
+    dispatch_semaphore_signal(_semaphore);
+        
+}
++ (void)cancelRequestWithURL:(NSString *)URL {
+    if (!URL) {
+        return;
+    }
+    dispatch_semaphore_wait(_semaphore, _overTime);
+    [[self allSessionTask] enumerateObjectsUsingBlock:^(NSURLSessionTask  *_Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([task.currentRequest.URL.absoluteString hasPrefix:URL]) {
+            [task cancel];
+            [[self allSessionTask] removeObject:task];
+            *stop = YES;
+        }
+    }];
+    dispatch_semaphore_signal(_semaphore);
+}
+
+#pragma mark - GET
++ (__kindof NSURLSessionTask *)GET:(NSString *)URL
+               parameters:(id)parameters
+                  success:(YXHttpRequestSuccess)success
+                  failure:(YXHttpRequestFailed)failure {
+
+    NSURLSessionTask *sessionTask = [_sessionManager GET:URL
+                                              parameters:parameters
+                                                progress:^(NSProgress * _Nonnull downloadProgress) {
         // 如果需要填充进度内容，可以直接进行内容添加
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-        NSInteger statusCode = response.statusCode;
-        failure ? failure(error, statusCode) : nil;
+        
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
     }];
-   
+    
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+    return sessionTask;
 }
 
-+ (void)POST:(NSString *)URL
-  parameters:(id)parameters
-     success:(YXHttpRequestSuccess)success
-     failure:(YXHttpRequestFailed)failure {
+#pragma mark - POST
++ (__kindof NSURLSessionTask *)POST:(NSString *)URL
+                parameters:(id)parameters
+                   success:(YXHttpRequestSuccess)success
+                   failure:(YXHttpRequestFailed)failure {
     
-    [_sessionManager POST:URL parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    NSURLSessionTask *sessionTask = [_sessionManager POST:URL
+                                               parameters:parameters
+                                                progress:^(NSProgress * _Nonnull uploadProgress) {
         //如果需要填充进度内容，可以直接进行内容添加
-
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-        NSInteger statusCode = response.statusCode;
-        failure ? failure(error, statusCode) : nil;
+        
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
     }];
+    // 添加sessionTask到数组
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+
+    return sessionTask;
+    
+}
+#pragma mark - PUT
++ (__kindof NSURLSessionTask *)PUT:(NSString *)URL
+                         parameters:(id)parameters
+                            success:(YXHttpRequestSuccess)success
+                           failure:(YXHttpRequestFailed)failure {
+    
+    NSURLSessionTask *sessionTask = [_sessionManager PUT:URL
+                                              parameters:parameters
+                                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [[self allSessionTask] removeObject:task];
+        success ? success(responseObject) : nil;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
+        
+    }];
+    // 添加sessionTask到数组
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+    
+    return sessionTask;
+    
+}
+#pragma mark - DELETE
++ (__kindof NSURLSessionTask *)DELETE:(NSString *)URL
+                         parameters:(id)parameters
+                            success:(YXHttpRequestSuccess)success
+                              failure:(YXHttpRequestFailed)failure {
+    
+    NSURLSessionTask *sessionTask = [_sessionManager DELETE:URL
+                                                 parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [[self allSessionTask] removeObject:task];
+        success ? success(responseObject) : nil;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
+    }];
+    // 添加sessionTask到数组
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+    
+    return sessionTask;
+}
+#pragma mark - HEAD
++ (__kindof NSURLSessionTask *)HEAD:(NSString *)URL
+                         parameters:(id)parameters
+                            success:(YXHttpRequestSuccess)success
+                            failure:(YXHttpRequestFailed)failure {
+    
+    NSURLSessionTask *sessionTask = [_sessionManager HEAD:URL
+                                               parameters:parameters
+                                                  success:^(NSURLSessionDataTask * _Nonnull task) {
+        [[self allSessionTask] removeObject:task];
+        success ? success(nil) : nil;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
+    }];
+    // 添加sessionTask到数组
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+    
+    return sessionTask;
+    
+}
+
+#pragma mark - PATCH
++ (__kindof NSURLSessionTask *)PATCH:(NSString *)URL
+                         parameters:(id)parameters
+                            success:(YXHttpRequestSuccess)success
+                            failure:(YXHttpRequestFailed)failure {
+    
+    NSURLSessionTask *sessionTask = [_sessionManager PATCH:URL
+                                                parameters:parameters
+                                                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [[self allSessionTask] removeObject:task];
+        success ? success(nil) : nil;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
+        
+    }];
+    // 添加sessionTask到数组
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+    
+    return sessionTask;
 }
 
 #pragma mark - 上传文件
-+ (void)uploadFileWithURL:(NSString *)URL
-               parameters:(id)parameters
-                     name:(NSString *)name
-                 filePath:(NSString *)filePath
-                 progress:(YXHttpProgress)progress
-                  success:(YXHttpRequestSuccess)success
-                  failure:(YXHttpRequestFailed)failure {
++ (__kindof NSURLSessionTask *)uploadFileWithURL:(NSString *)URL
+                             parameters:(id)parameters
+                                   name:(NSString *)name
+                               filePath:(NSString *)filePath
+                               progress:(YXHttpProgress)progress
+                                success:(YXHttpRequestSuccess)success
+                                failure:(YXHttpRequestFailed)failure {
     
-    [_sessionManager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSURLSessionTask *sessionTask = [_sessionManager POST:URL
+                                               parameters:parameters
+                                constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         NSError *error = nil;
         [formData appendPartWithFileURL:[NSURL URLWithString:filePath] name:name error:&error];
@@ -79,28 +217,36 @@ static AFHTTPSessionManager *_sessionManager;
         });
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-        NSInteger statusCode = response.statusCode;
-        failure ? failure(error, statusCode) : nil;
+    
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
 
     }];
+    // 添加sessionTask到数组
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+    return sessionTask;
 }
+
 #pragma mark - 上传多张图片
-+ (void)uploadImagesWithURL:(NSString *)URL
-                 parameters:(id)parameters
-                       name:(NSString *)name
-                     images:(NSArray<UIImage *> *)images
-                  fileNames:(NSArray<NSString *> *)fileNames
-                 imageScale:(CGFloat)imageScale
-                  imageType:(NSString *)imageType
-                   progress:(YXHttpProgress)progress
-                    success:(YXHttpRequestSuccess)success
-                    failure:(YXHttpRequestFailed)failure {
++ (__kindof NSURLSessionTask *)uploadImagesWithURL:(NSString *)URL
+                               parameters:(id)parameters
+                                     name:(NSString *)name
+                                   images:(NSArray<UIImage *> *)images
+                                fileNames:(NSArray<NSString *> *)fileNames
+                               imageScale:(CGFloat)imageScale
+                                imageType:(NSString *)imageType
+                                 progress:(YXHttpProgress)progress
+                                  success:(YXHttpRequestSuccess)success
+                                  failure:(YXHttpRequestFailed)failure {
     
-    [_sessionManager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSURLSessionTask *sessionTask = [_sessionManager POST:URL
+                                               parameters:parameters
+                                constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         for (NSUInteger i = 0; i < images.count; i ++) {
             // 图片经过等比压缩后得到的二进制文件
             NSData *imageData = UIImageJPEGRepresentation(images[i], imageScale ? :1.f);
@@ -109,11 +255,9 @@ static AFHTTPSessionManager *_sessionManager;
             formatter.dateFormat = @"yyyy-MM-dd-HH-mm-ss";
             NSString *str = [formatter stringFromDate:[NSDate date]];
             NSString *imageFileName = YXNSStringFormat(@"%@%zd.%@", str, i, imageType ? :@"jpg");
-            
             [formData appendPartWithFileData:imageData
                                         name:name
                                     fileName:fileNames ? YXNSStringFormat(@"%@.%@",fileNames[i],imageType?:@"jpg") : imageFileName mimeType:YXNSStringFormat(@"image/%@",imageType ?: @"jpg")];
-            
         }
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -123,22 +267,26 @@ static AFHTTPSessionManager *_sessionManager;
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-        NSInteger statusCode = response.statusCode;
-        failure ? failure(error, statusCode) : nil;
-
+       
+        [[self allSessionTask] removeObject:task];
+        failure ? failure(error, [self statusCode:task]) : nil;
     }];
+    // 添加sessionTask到数组
+    sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
+    return sessionTask;
     
 }
+
 #pragma mark - 下载文件
-+ (void)downloadWithURL:(NSString *)URL
-                fileDir:(NSString *)fileDir
-               progress:(YXHttpProgress)progress
-                success:(void(^)(NSString *filePath))success
-                failure:(YXHttpRequestFailed)failure {
++ (__kindof NSURLSessionTask *)downloadWithURL:(NSString *)URL
+                              fileDir:(NSString *)fileDir
+                             progress:(YXHttpProgress)progress
+                              success:(void(^)(NSString *filePath))success
+                              failure:(YXHttpRequestFailed)failure {
     
     // 下载地址
     NSURL *downloadURL = [NSURL URLWithString:URL];
@@ -164,6 +312,7 @@ static AFHTTPSessionManager *_sessionManager;
         
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
       
+        [[self allSessionTask] removeObject:downloadTask];
         if (failure && error) {
             NSHTTPURLResponse *taskRes = (NSHTTPURLResponse *)downloadTask.response;
             NSInteger statusCode = taskRes.statusCode;
@@ -174,10 +323,25 @@ static AFHTTPSessionManager *_sessionManager;
     }];
     // 开始下载
     [downloadTask resume];
+    // 添加sessionTask到数组
+    downloadTask ? [[self allSessionTask] addObject:downloadTask] : nil;
+    
+    return downloadTask;
     
 }
-#pragma mark - 网络状态
++ (NSMutableArray *)allSessionTask {
+    if (!_allSessionTask) {
+        _allSessionTask = [[NSMutableArray alloc] init];
+    }
+    return _allSessionTask;
+}
++ (NSInteger)statusCode:(NSURLSessionDataTask *)task {
+    NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+    NSInteger statusCode = response.statusCode;
+    return statusCode;
+}
 
+#pragma mark - 网络状态
 + (void)networkStatusWithBlock:(YXNetworkStatus)networkStatus {
     
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -212,13 +376,12 @@ static AFHTTPSessionManager *_sessionManager;
 + (BOOL)isWiFiNetwork {
     return [AFNetworkReachabilityManager sharedManager].reachableViaWiFi;
 }
-
 #pragma mark - 初始化AFHTTPSessionManager相关属性
 + (void)load {
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 + (void)initialize {
-    
+    _semaphore = dispatch_semaphore_create(1);
     _sessionManager = [AFHTTPSessionManager manager];
     _sessionManager.requestSerializer.timeoutInterval = 20.0;
     _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -279,7 +442,10 @@ static AFHTTPSessionManager *_sessionManager;
 
 #ifdef DEBUG
 
-@implementation NSArray (PP)
+
+
+
+@implementation NSArray (YXLog)
 - (NSString *)descriptionWithLocale:(id)locale {
     NSMutableString *strM = [NSMutableString stringWithString:@"(\n"];
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -292,7 +458,7 @@ static AFHTTPSessionManager *_sessionManager;
 
 @end
 
-@implementation NSDictionary (PP)
+@implementation NSDictionary (YXLog)
 
 - (NSString *)descriptionWithLocale:(id)locale {
     NSMutableString *strM = [NSMutableString stringWithString:@"{\n"];

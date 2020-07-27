@@ -130,7 +130,6 @@ static MBProgressHUD *_hud;
 /// 指定view加载显示loding
 + (void)yx_showLodingtoView:(UIView *)view {
     [self yx_showSuccess:nil toView:view];
-    
 }
 
 

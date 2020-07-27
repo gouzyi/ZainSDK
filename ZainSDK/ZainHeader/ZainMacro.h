@@ -7,10 +7,25 @@
 //
 
 
-#import "ZainInline.h"
 
 #ifndef ZainMacro_h
 #define ZainMacro_h
+
+/**判读是否有刘海**/
+static inline BOOL isIPhoneX() {
+    BOOL iPhoneX = NO;
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+        return iPhoneX;
+    }
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            iPhoneX = YES;
+        }
+    }
+    return iPhoneX;
+}
+
 
 
 #define kSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width

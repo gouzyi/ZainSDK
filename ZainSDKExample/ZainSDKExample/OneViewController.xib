@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OneViewController">
+            <connections>
+                <outlet property="parameLab" destination="q2C-cT-Z2o" id="hzc-is-6zR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2C-cT-Z2o">
+                    <rect key="frame" x="186" y="100" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3m-bJ-0Rm">
+                    <rect key="frame" x="157.5" y="141" width="99" height="30"/>
+                    <state key="normal" title="执行回调函数1"/>
+                    <connections>
+                        <action selector="clickActionOne:" destination="-1" eventType="touchUpInside" id="RiH-6c-Pyd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX4-jG-r7A">
+                    <rect key="frame" x="156.5" y="191" width="101" height="30"/>
+                    <state key="normal" title="执行回调函数2"/>
+                    <connections>
+                        <action selector="clickActionTwo:" destination="-1" eventType="touchUpInside" id="bYH-Hb-P9t"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAT-3W-k9c">
+                    <rect key="frame" x="177" y="241" width="60" height="30"/>
+                    <state key="normal" title="Go Next "/>
+                    <connections>
+                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="tcV-L1-2Gg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9u-td-CZG">
+                    <rect key="frame" x="164.5" y="291" width="85" height="30"/>
+                    <state key="normal" title="切换到Item2"/>
+                    <connections>
+                        <action selector="selectItem:" destination="-1" eventType="touchUpInside" id="YAM-AO-bDE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7P-jL-H0e">
+                    <rect key="frame" x="161" y="341" width="92" height="30"/>
+                    <state key="normal" title="返回到根视图"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="RK6-Nx-pt7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsD-VW-uwf">
+                    <rect key="frame" x="145.5" y="391" width="123" height="30"/>
+                    <state key="normal" title="返回到指定控制器"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="yXw-m1-piR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sym-il-w1X">
+                    <rect key="frame" x="130.5" y="441" width="153" height="30"/>
+                    <state key="normal" title="返回到指定索引控制器"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="IZV-iJ-QUz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLe-Rb-za6">
+                    <rect key="frame" x="90.5" y="141" width="47" height="30"/>
+                    <state key="normal" title="  返回  "/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="wKH-5f-PUS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vsD-VW-uwf" firstAttribute="top" secondItem="K7P-jL-H0e" secondAttribute="bottom" constant="20" id="5ZK-d5-3Ab"/>
+                <constraint firstItem="aX4-jG-r7A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7EG-12-cKb"/>
+                <constraint firstItem="aX4-jG-r7A" firstAttribute="top" secondItem="c3m-bJ-0Rm" secondAttribute="bottom" constant="20" id="Bdt-Xo-Bdc"/>
+                <constraint firstItem="z9u-td-CZG" firstAttribute="top" secondItem="tAT-3W-k9c" secondAttribute="bottom" constant="20" id="KYN-xe-xDW"/>
+                <constraint firstItem="tAT-3W-k9c" firstAttribute="top" secondItem="aX4-jG-r7A" secondAttribute="bottom" constant="20" id="Qma-yD-xyV"/>
+                <constraint firstItem="q2C-cT-Z2o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="afv-Rn-DyQ"/>
+                <constraint firstItem="Sym-il-w1X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cyn-qH-9vD"/>
+                <constraint firstItem="K7P-jL-H0e" firstAttribute="top" secondItem="z9u-td-CZG" secondAttribute="bottom" constant="20" id="fBJ-Rx-uhv"/>
+                <constraint firstItem="z9u-td-CZG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gol-kJ-znl"/>
+                <constraint firstItem="tAT-3W-k9c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h53-uP-R09"/>
+                <constraint firstItem="Sym-il-w1X" firstAttribute="top" secondItem="vsD-VW-uwf" secondAttribute="bottom" constant="20" id="jF7-Ax-0sd"/>
+                <constraint firstItem="c3m-bJ-0Rm" firstAttribute="leading" secondItem="KLe-Rb-za6" secondAttribute="trailing" constant="20" id="l9a-DZ-mZt"/>
+                <constraint firstItem="K7P-jL-H0e" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="meu-tE-Yz4"/>
+                <constraint firstItem="KLe-Rb-za6" firstAttribute="centerY" secondItem="c3m-bJ-0Rm" secondAttribute="centerY" id="omU-Jl-77G"/>
+                <constraint firstItem="q2C-cT-Z2o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="shW-Qd-CWw"/>
+                <constraint firstItem="vsD-VW-uwf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="txg-WF-O1A"/>
+                <constraint firstItem="c3m-bJ-0Rm" firstAttribute="top" secondItem="q2C-cT-Z2o" secondAttribute="bottom" constant="20" id="y5C-vU-PdZ"/>
+                <constraint firstItem="c3m-bJ-0Rm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zUK-z2-cdn"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="113"/>
+        </view>
+    </objects>
+</document>
